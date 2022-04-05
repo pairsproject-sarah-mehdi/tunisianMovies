@@ -1,25 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
     <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
- <!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>  
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<title>Tunisian Movie</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>Tunisian Movie</title>
 </head>
+<style>
+    body {
+      
+     background-color: white;    
+  
+     /* transition the background-color over 1s with a linear animation */
+     transition: background-color 1s linear;
+  }
+     
+ 
+  body:hover {
+     background-color: transparent;      
+  }
+ </style>
 <body>
-   
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="Pic\Flag_of_Tunisia.png" width="30" height="24">
+                <a class="navbar-brand" href="#">TN.Movies</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div style="float:right" class="collapse navbar-collapse" id="navbarNav">
+                </div>
+        </div>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary btn-sm btn-light" data-bs-toggle="modal"
+                    data-bs-target="#signup">
+                    SignUp</button>
+            </li>&nbsp;&nbsp;
+            <li class="nav-item">
+                <button type="button" class="btn btn-primary btn-sm btn-light" data-bs-toggle="modal"
+                    data-bs-target="#login">
+                    LogIn
+                </button>
+            </li>
+        </ul>
+    </nav>
 
 
+
+    <!-- signup -->
+    <div class="modal fade" id="signup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Sign Up</h5>
+                    <button id="signup" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3 row">
+                        <label for="firstName" class="col-sm-2 col-form-label">First Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="firstName">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="lastName" class="col-sm-2 col-form-label">Last Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="lastName">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="email" class="col-sm-2 col-form-label">Email</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="email">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="pwd" class="col-sm-2 col-form-label">Password</label>
+                        
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="pwd">
+                            <span id="pwdError">pwd too short</span>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button id="btn" type="button" class="btn btn-primary">Sign Up</button>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- login -->
+    <div class="modal fade" id="login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3 row">
+                        <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="emailLog">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="pwdLog">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="btnlog">login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+                aria-label="Slide 5"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5"
+                aria-label="Slide 6"></button>
+        </div>
+        <div class="carousel-inner carousel">
+            <div class="carousel-item active">
+                <img src="Pic\Hades 2.jpg" class="d-block w-100" width="1200px" height="630px">
+            </div>
+            <div class="carousel-item">
+                <img src="Pic\Fatwa.jpg" class="d-block w-100" width="1200px" height="630px">
+            </div>
+            <div class="carousel-item">
+                <img src="Pic\Les frontières du ciel.jpg" class="d-block w-100" width="1200px" height="630px">
+            </div>
+
+            <div class="carousel-item">
+                <img src="Pic\Beb el Fella.png" class="d-block w-100" width="1200px" height="630px">
+            </div>
+
+            <div class="carousel-item">
+                <img src="Pic\film-papillon.png" class="d-block w-100" width="1200px" height="630px">
+            </div>
+            <div class="carousel-item">
+                <img src="Pic\dicta_shot.jpg" class="d-block w-100" width="1200px" height="630px">
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <br>
 
     
+            <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+            <h1>Movies Names:</h1>
+            <div class="cards" id="tiles-container">
+              
+              
+            
+            </div>
+                
+       
 
 
-<script src="main.js"></script>
+
+    <button type="button" class="btn btn-primary btn-sm btn-light" data-bs-toggle="modal"
+    data-bs-target="#addMovie1">
+    add</button>
+
+
+    <div class="modal fade" id="addMovie1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addMovie1">add</h5>
+                    <button id="addMovie" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3 row">
+                        <label for="addMovieName" class="col-sm-2 col-form-label">name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="addMovieName">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="year" class="col-sm-2 col-form-label">Year</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="year">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="synob" class="col-sm-2 col-form-label">synob</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="synob">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="pic" class="col-sm-2 col-form-label">Poster</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="pic">
+                        </div>
+                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button id="btnadd" type="button" class="btn btn-primary">add</button>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+       
+
+    </div>
+
+
+
+
+
+
+
+    <script src="main.js"></script>
 </body>
+
 </html>
